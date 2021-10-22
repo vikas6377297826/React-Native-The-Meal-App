@@ -26,6 +26,21 @@ const CategoryMealsScreen = (props) => {
   );
 };
 
+// Humne ek bar uper getparma ker dia is karna humne isko object se funtion bana ker likha hai
+CategoryMealsScreen.navigationOptions = (navigationData) => {
+  const catId = navigationData.navigation.getParam("categoryId");
+  const selectedCategory = CATEGORIES.find((cat) => cat.id === catId);
+
+  return {
+    headerTitle: selectedCategory.title,
+    headerStyle: {
+      backgroundColor:
+        Platform.OS === "android" ? "white" : Colors.primaryColor,
+    },
+    headerTintColor: Platform.OS === "android" ? "black" : Colors.primaryColor,
+  };
+};
+
 const styles = StyleSheet.create({
   screen: {
     flex: 1,

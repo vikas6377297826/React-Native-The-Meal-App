@@ -8,6 +8,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Platform,
+  Image,
 } from "react-native";
 import Colors from "../constants/Colors";
 import { CATEGORIES } from "../data/dummy-data";
@@ -27,7 +28,7 @@ const CategoriesScreen = (props) => {
         }}
       >
         <View>
-          <Text>{itemData.item.title}</Text>
+          <Text style={styles.titleText}>{itemData.item.title}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -47,9 +48,9 @@ const CategoriesScreen = (props) => {
 CategoriesScreen.navigationOptions = {
   headerTitle: "Meal Categories",
   headerStyle: {
-    backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "white",
+    backgroundColor: Platform.OS === "android" ? "white" : Colors.primaryColor,
   },
-  headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor,
+  headerTintColor: Platform.OS === "android" ? "black" : Colors.primaryColor,
 };
 
 const styles = StyleSheet.create({
@@ -62,6 +63,15 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 15,
     height: 150,
+    backgroundColor: Colors.accentColor,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  titleText: {
+    color: "white",
+    fontSize: 25,
+    fontFamily: "dancing-script",
   },
 });
 
