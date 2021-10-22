@@ -47,10 +47,6 @@ const CategoriesScreen = (props) => {
 // YE Screen KE Titile ko Change or Style karne ke lie use kia jata hai
 CategoriesScreen.navigationOptions = {
   headerTitle: "Meal Categories",
-  headerStyle: {
-    backgroundColor: Platform.OS === "android" ? "white" : Colors.primaryColor,
-  },
-  headerTintColor: Platform.OS === "android" ? "black" : Colors.primaryColor,
 };
 
 const styles = StyleSheet.create({
@@ -66,6 +62,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.accentColor,
     alignItems: "center",
     justifyContent: "center",
+    borderRadius: 10,
+    shadowColor: "gray",
+    shadowOpacity: 10,
+    shadowOffset: { width: 1, height: 2 },
+    elevation: 40,
   },
 
   titleText: {

@@ -4,6 +4,9 @@ import CategoriesScreen from "./screens/CategoriesScreen";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 import MealsNavigator from "./navigation/MealsNavigator";
+import { enableScreens } from "react-native-screens";
+
+enableScreens();
 
 // FOR FETCHING CUSTOM FONTS THIS REQUIRE
 const fetchFonts = () => {
