@@ -1,13 +1,19 @@
 import React from "react";
 import { View, StyleSheet, Text, Button, FlatList } from "react-native";
+import MealItem from "../components/MealItem";
 import { CATEGORIES, MEALS } from "../data/dummy-data";
 
 const CategoryMealsScreen = (props) => {
   const renderMealItem = (itemData) => {
     return (
-      <View>
-        <Text>{itemData.item.title}</Text>
-      </View>
+      <MealItem
+        title={itemData.item.title}
+        duration={itemData.item.duration}
+        complexity={itemData.item.complexity}
+        image={itemData.item.imageUrl}
+        affordabillity={itemData.item.affordabillity}
+        onSelectMeal={() => {}}
+      />
     );
   };
 
@@ -26,6 +32,7 @@ const CategoryMealsScreen = (props) => {
           item.id;
         }}
         renderItem={renderMealItem}
+        style={styles.mealScreen}
       />
     </View>
   );
@@ -46,6 +53,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  mealScreen: {
+    width: "100%",
   },
 });
 
