@@ -1,26 +1,31 @@
 import React from "react";
-import { View, StyleSheet, Text, Button } from "react-native";
-import { CATEGORIES } from "../data/dummy-data";
+import { View, StyleSheet, Text, Button, FlatList } from "react-native";
+import { CATEGORIES, MEALS } from "../data/dummy-data";
 
 const CategoryMealsScreen = (props) => {
+  const renderMealItem = (itemData) => {
+    return (
+      <View>
+        <Text>{itemData.item.title}</Text>
+      </View>
+    );
+  };
+
   const catId = props.navigation.getParam("categoryId"); // This will get parma ID Of perent component
   const selectedCategory = CATEGORIES.find((cat) => cat.id === catId); // ye funtion hum Jis per click karenge uska id or humra id Check karega
 
+  const displayedMeals = MEALS.filter(
+    (meal) => meal.categoryIds.indexOf(catId) >= 0
+  );
+
   return (
     <View style={styles.screen}>
-      <Text>The CategoryMealsScreen</Text>
-      <Text>{selectedCategory.title}</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => {
-          props.navigation.navigate("MealDetail");
+      <FlatList
+        data={displayedMeals}
+        keyExtractor={(item, index) => {
+          item.id;
         }}
-      />
-      <Button
-        title="Go Back"
-        onPress={() => {
-          props.navigation.goBack(); // Also We Can Use " pop(); "
-        }}
+        renderItem={renderMealItem}
       />
     </View>
   );
