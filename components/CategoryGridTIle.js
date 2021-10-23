@@ -45,7 +45,6 @@ const styles = StyleSheet.create({
   titleText: {
     color: "black",
     fontSize: 20,
-    fontFamily: "dancing-script",
   },
 });
 

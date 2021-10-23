@@ -1,7 +1,8 @@
 import React from "react";
 import { View, StyleSheet, Text, Button } from "react-native";
-
 import { MEALS } from "../data/dummy-data";
+
+import { Ionicons } from "@expo/vector-icons";
 
 const MealDetailScreen = (props) => {
   const mealId = props.navigation.getParam("mealId");
@@ -27,6 +28,16 @@ MealDetailScreen.navigationOptions = (navigationData) => {
 
   return {
     headerTitle: selectedMeal.title,
+    headerRight: () => (
+      <Ionicons
+        name="ios-star"
+        size={24}
+        color="black"
+        onPress={() => {
+          console.log("Merked as Favorait");
+        }}
+      />
+    ),
   };
 };
 

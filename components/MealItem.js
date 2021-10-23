@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
   },
   title: {
-    fontFamily: "cairo-black",
     fontSize: 22,
     color: "white",
 
