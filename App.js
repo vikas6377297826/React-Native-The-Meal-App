@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import CategoriesScreen from "./screens/CategoriesScreen";
+import { StyleSheet } from "react-native";
 import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 import MealsNavigator from "./navigation/MealsNavigator";
